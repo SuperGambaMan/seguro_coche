@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Paso 1</title>
 </head>
 <body>
 
-<form method="" th:action="@{/seguro/calculos/cotizacion/paso1}"
-                th:object="${}"></form>
+<form method="post" th:action="@{/seguros/calculos/cotizacion/paso2}"
+                th:object="${cotizacionSeguro}">
+    <label for="nombre">Nombre y Apellido</label>
+    <input id="nombre" type="text" th:field="*{nombre}" />
+    <br>
+    <label for="edad">Edad</label>
+    <input id="edad" type="text" th:field="*{edad}" />
+    <br>
+    <label for="anioCarnet">Años carnet</label>
+    <input id="anioCarnet" type="text" th:field="*{anioCarnet}" />
+    <br>
+    <button>Siguiente</button>
+</form>
 </body>
 </html>
